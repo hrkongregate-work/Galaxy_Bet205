@@ -41,15 +41,20 @@ Architecture today: React + Vite frontend in `client/` with an Express API in `b
 
 
 ```bash
-# 1. Install Backend dependencies
+# 1. Install root orchestration dependencies
 npm install
 
-# 2. Install Frontend dependencies
+# 2. Install backend dependencies
+cd backend
+npm install
+cd ..
+
+# 3. Install frontend dependencies
 cd client
 npm install
 cd ..
 
-# 3. Launch Project
+# 4. Launch project
 npm start
 ```
 
