@@ -19,7 +19,7 @@ const SomleNavbar = ({ rowData }) => {
   const Data = {
     navIcon: "/images/softgalaxy.svg",
     navLink: [
-      { name: "Home", icon: BiSolidCastle, link: "/home" },
+      // { name: "Home", icon: BiSolidCastle, link: "/home" },
       { name: "Account", icon: FaRegCircleUser, link: "/account" },
       { name: "Marketplace", icon: GiBrodieHelmet, link: "/nfts" },
       { name: "Trading", icon: AiOutlineBarChart, link: "/trading" },
