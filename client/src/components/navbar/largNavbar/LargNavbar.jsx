@@ -12,16 +12,28 @@ import { FiSearch } from "react-icons/fi";
 
 const Data = {
   navIcon: "/images/softgalaxy.svg",
-  navLink: [
-    { name: "Home", link: "/home" },
-    { name: "Marketplace", link: "/nfts" },
-    { name: "Trading", link: "/trading" },
-    { name: "Sports", link: "/sports-betting" },
-    { name: "Roulette", link: "/roulette" },
-    { name: "Slots", link: "/slots" },
-    { name: "Staking", link: "/staking" },
-    { name: "Rankings", link: "/rankings" },
-    { name: "Support", link: "/support" },
+  navGroups: [
+    {
+      name: "Play",
+      links: [
+        { name: "Sports", link: "/sports-betting" },
+        { name: "Roulette", link: "/roulette" },
+        { name: "Slots", link: "/slots" },
+        { name: "Staking", link: "/staking" },
+      ],
+    },
+    {
+      name: "Market",
+      links: [
+        { name: "Marketplace", link: "/nfts" },
+        { name: "Trading", link: "/trading" },
+        { name: "Rankings", link: "/rankings" },
+      ],
+    },
+    {
+      name: "Community",
+      links: [{ name: "Support", link: "/support" }],
+    },
   ],
 };
 
@@ -33,7 +45,7 @@ const LargNavbar = ({ rowData, setData }) => {
 
   const searchTargets = useMemo(
     () => [
-      ...Data.navLink,
+      ...Data.navGroups.flatMap((group) => group.links),
       { name: "NFT Lab", link: "/nftlab" },
       { name: "Account", link: "/account" },
       { name: "Sign Up", link: "/signup" },
@@ -133,12 +145,19 @@ const LargNavbar = ({ rowData, setData }) => {
         </div>
 
         <div className="navbar-collapse justify-content-end gap-3">
-          <ul className="list-unstyled d-flex gap-4 m-0">
-            {Data.navLink.map((item, index) => (
-              <li key={index}>
-                <NavLink className="F3" to={item.link}>
-                  {item.name}
-                </NavLink>
+          <ul className="sg-nav-links list-unstyled d-flex gap-4 m-0">
+            {Data.navGroups.map((group) => (
+              <li key={group.name} className="sg-nav-group">
+                <button type="button" className="sg-nav-trigger F3" aria-haspopup="true">
+                  {group.name}
+                </button>
+                <div className="sg-nav-dropdown">
+                  {group.links.map((item) => (
+                    <NavLink key={item.link} className="F3" to={item.link}>
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
               </li>
             ))}
           </ul>
