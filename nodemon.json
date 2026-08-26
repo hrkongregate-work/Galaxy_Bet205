@@ -1,13 +1,17 @@
 {
   "watch": [
-    "server.js",
-    "config.js",
-    "config",
-    "controllers",
-    "middleware",
-    "routes",
-    "utils",
-    "models"
+    "backend/server.js",
+    "backend/config.js",
+    "backend/config",
+    "backend/controllers",
+    "backend/middleware",
+    "backend/routes",
+    "backend/utils",
+    "backend/models"
   ],
-  "ignore": ["client", "node_modules", "package-lock.json"]
+  "ignore": [
+    "client",
+    "node_modules",
+    "package-lock.json"
+  ]
 }

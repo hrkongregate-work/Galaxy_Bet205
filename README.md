@@ -18,7 +18,7 @@ SoftGalaxyBet runs on a single value loop:
 3. **Refer** — A binary + linear affiliate tree pays direct and volume bonuses upline.
 4. **Claim** — Staking, gaming, and affiliate earnings settle in one dashboard claim path.
 
-Architecture today: React + Vite frontend with an Express API. Landing and branded flows are in place; full staking, genealogy, and game modules are the product roadmap.
+Architecture today: React + Vite frontend in `client/` with an Express API in `backend/`. Landing and branded flows are in place; full staking, genealogy, and game modules are the product roadmap.
 
 ---
 
